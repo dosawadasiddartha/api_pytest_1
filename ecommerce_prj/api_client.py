@@ -28,6 +28,7 @@ class APIClient:
     
     def delete_product(self, record_id):
         return self.send_request("DELETE", record_id=record_id)
+    
     def create_product(self, payload):
          url = f"{BASE_URL}/collections/products/records?project_id={self.project_id}"
          return requests.post(url, headers=self.headers, json=payload)
